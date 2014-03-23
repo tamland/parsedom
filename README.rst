@@ -6,7 +6,9 @@ This is a fork of `Common Functions and ParseDOM <https://github.com/HenrikDK/xb
 
 Getting element content.
 -------------------------
+
 .. code:: python
+
     from parsedom import parseDOM
     link_html = "<a href='bla.html'>Link Test</a>"
     ret = parseDOM(link_html, "a")
@@ -18,6 +20,7 @@ Getting an element attribute.
 -----------------------------
 
 .. code:: python
+
     link_html = "<a href='bla.html'>Link Test</a>"
     ret = parseDOM(link_html, "a", ret = "href")
     print repr(ret) # Prints ['bla.html']
@@ -25,7 +28,9 @@ Getting an element attribute.
 
 Get element with matching attribute.
 ---------------------------------------
+
 .. code:: python
+
     link_html = "<a href='bla1.html' id='link1'>Link Test1</a><a href='bla2.html' id='link2'>Link Test2</a><a href='bla3.html' id='link3'>Link Test3</a>"
     ret1 = parseDOM(link_html, "a", attrs = { "id": "link1" }, ret = "href")
     ret2 = parseDOM(link_html, "a", attrs = { "id": "link2" })
@@ -39,6 +44,7 @@ When scraping sites it is prudent to scrape in steps, since real websites are of
 Take this example where you want to get all the user uploads.
 
 .. code:: html
+
      &lt;div id="content"&gt;
       &lt;div id="sidebar"&gt;
        &lt;div id="latest"&gt;
@@ -64,11 +70,14 @@ The first step is to limit your search to the correct area.
 One should always find the inner most DOM element that contains the needed data.
 
 .. code:: python
+
     ret = parseDOM(html, "div", attrs = { "id": "uploads" })
+
 
 The variable ret now contains
 
 .. code:: python
+
     ['<a href="/video?12">First upload</a>&lt;br /&gt;
     <a href="/video?23">Second upload</a>&lt;br /&gt;
     <a href="/video?34">Third upload</a>&lt;br /&gt;
@@ -77,6 +86,7 @@ The variable ret now contains
 And now we get the video url.
 
 .. code:: python
+
     videos = parseDOM(ret, "a", ret = "href")
     print repr(videos) # Prints [ "video?12", "video?23", "video?34", "video?41" ]
 

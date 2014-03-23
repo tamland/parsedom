@@ -22,6 +22,24 @@ import json
 
 
 def parseDOM(html, name=u"", attrs={}, ret=False):
+    """
+    :param html:
+        String to parse, or list of strings to parse.
+    :type html:
+        string or list
+    :param name:
+        Element to match ( for instance "span" )
+    :type name:
+        string
+    :param attrs:
+        Dictionary with attributes you want matched in the elment ( for instance { "id": "span3", "class": "oneclass.*anotherclass", "attribute": "a random tag" } )
+    :type attrs:
+        dict
+    :param ret:
+        Attribute in element to return value of. If not set(or False), returns content of DOM element.
+    :type ret:
+        string
+    """
     log("Name: " + repr(name) + " - Attrs:" + repr(attrs) + " - Ret: " + repr(ret) + " - HTML: " + str(type(html)), 3)
 
     if isinstance(name, str): # Should be handled

@@ -32,11 +32,14 @@ def parseDOM(html, name=u"", attrs={}, ret=False):
     :type name:
         string
     :param attrs:
-        Dictionary with attributes you want matched in the elment ( for instance { "id": "span3", "class": "oneclass.*anotherclass", "attribute": "a random tag" } )
+        Dictionary with attributes you want matched in the elment (for
+        instance { "id": "span3", "class": "oneclass.*anotherclass",
+        "attribute": "a random tag" } )
     :type attrs:
         dict
     :param ret:
-        Attribute in element to return value of. If not set(or False), returns content of DOM element.
+        Attribute in element to return value of. If not set(or False), returns
+        content of DOM element.
     :type ret:
         string
     """

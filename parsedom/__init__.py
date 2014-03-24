@@ -19,6 +19,7 @@ import re
 import inspect
 import HTMLParser
 import json
+import logging
 
 
 def parseDOM(html, name=u"", attrs={}, ret=False):
@@ -245,7 +246,7 @@ def makeUTF8(data):
 
 def log(description, level=0):
     try:
-        logger.debug((u"[%s] %s : '%s'" % (plugin, inspect.stack()[1][3], description)).decode("utf-8"))
+        logging.debug((u"[parsedom] %s : '%s'" % (inspect.stack()[1][3], description)).decode("utf-8"))
     except:
-        logger.debug(u"FALLBACK [%s] %s : '%s'" % (plugin, inspect.stack()[1][3], repr(description)))
+        logging.debug(u"FALLBACK [parsedom] %s : '%s'" % (inspect.stack()[1][3], repr(description)))
 

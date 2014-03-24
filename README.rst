@@ -4,6 +4,16 @@ parsedom
 This is a fork of `Common Functions and ParseDOM <https://github.com/HenrikDK/xbmc-common-plugin-functions>`_ for use outside of XBMC.
 
 
+Installation
+------------
+Installing from PyPI using pip:
+
+.. code-block:: bash
+
+    $ pip install parsedom
+
+
+
 Getting element content.
 -------------------------
 
